@@ -32,7 +32,7 @@ def test_buzz():
     assert result == 'Buzz' 
 
 def test_fizzbuzz():
-    number = '15'
+    number = 15
 
     result = fizz_buzz(number)
 

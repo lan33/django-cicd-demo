@@ -1,0 +1,21 @@
+pipeline {
+    agent {
+        label 'linux'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                // Cloner le dépôt
+                git 'https://github.com/votre_nom_utilisateur/votre_depot.git'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Construire l'image Docker
+                    def image = docker.build("votre_nom_utilisateur/votre_image:latest")
+                }
+            }
+        }
+    }
+}
